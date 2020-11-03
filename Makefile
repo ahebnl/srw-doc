@@ -11,7 +11,7 @@ init:
 	gitbook install
 
 run:
-	gitbook serve
+	gitbook serve --port 4005
 
 build:
 	gitbook build
