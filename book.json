@@ -1,0 +1,76 @@
+{
+  "title": "SRW Document",
+  "description": "SRW",
+  "author": "Oleg Tchubar",
+  "output.name": "site",
+  "language": "zh-hans",
+  "gitbook": "3.2.3",
+  "root": ".",
+  "structure": {
+    "readme": "README.md"
+  },
+  "links": {
+    "sidebar": {
+      "主页": "https://github.com/ahebnl/srw-doc"
+    }
+  },
+  "plugins": [
+    "-search",
+    "search-plus@^0.0.11",
+    "-sharing",
+    "sharing-plus",
+    "github@^2.0.0",
+    "github-buttons@2.1.0",
+    "edit-link@^2.0.2",
+    "splitter",
+    "tbfed-pagefooter",
+    "prism",
+    "page-toc-button",
+    "back-to-top-button"
+  ],
+
+  "pluginsConfig": {
+    "theme-default": {
+      "showLevel": true
+    },
+    "github": {
+      "url": "https://github.com/ahebnl/srw-doc"
+    },
+    "github-buttons": {
+      "repo": "ahebnl/srw-doc",
+      "types": ["star"],
+      "size": "small"
+    },
+    "sharing": {
+      "weibo": false,
+      "douban": false,
+      "linkedin": true,
+      "facebook": false,
+      "google": true,
+      "twitter": true,
+      "all": ["weibo", "douban", "linkedin", "facebook", "google", "twitter"]
+    },
+    "tbfed-pagefooter": {
+      "copyright": "Copyright © 2019",
+      "modify_label": "Last Modified:",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "edit-link": {
+      "base": "https://github.com/ahebnl/srw-doc",
+      "label": "编辑此页面"
+    },
+    "anchor-navigation-ex": {
+      "isRewritePageTitle": false,
+      "tocLevel1Icon": "fa fa-hand-o-right",
+      "tocLevel2Icon": "fa fa-hand-o-right",
+      "tocLevel3Icon": "fa fa-hand-o-right"
+    },
+    "prism": {
+      "lang": {
+        "console": "bash",
+        "shell": "bash"
+      },
+      "css": ["prismjs/themes/prism-okaidia.css"]
+    }
+  }
+}
