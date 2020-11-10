@@ -26,7 +26,8 @@
     "tbfed-pagefooter",
     "prism",
     "page-toc-button",
-    "back-to-top-button"
+    "back-to-top-button",
+    "mathjax@2.7.6"
   ],
 
   "pluginsConfig": {

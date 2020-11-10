@@ -29,3 +29,7 @@ P. Elleaume (elleaume@esrf.fr)
 - [Reference Manual](chap11_Ref.md)
 - [Frequently Asked Questions](chap12_Ques.md)
 
+## Test
+
+- [Test](chap99_test.md)
+
