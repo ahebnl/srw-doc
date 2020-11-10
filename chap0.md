@@ -1,4 +1,4 @@
-## **About SRW**
+## About SRW
 Thanks for trying the SRW computer code.  
 SRW stands for "Synchrotron Radiation Workshop".  
 Current version: 3.96  

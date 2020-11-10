@@ -1,4 +1,4 @@
-# srw-doc
+# SRW-doc
 
 SRW Documentation
 

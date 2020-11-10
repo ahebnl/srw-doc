@@ -1,4 +1,4 @@
-## **About SRW**
+# About SRW
 Thanks for trying the SRW computer code.  
 SRW stands for "Synchrotron Radiation Workshop".  
 Current version: 3.96  
@@ -12,7 +12,9 @@ Authors:
 O. Chubar (chubar@bnl.gov)  
 P. Elleaume (elleaume@esrf.fr)
 
-## **Applications**
+# SRW IGOR Pro Interface
+## Applications
+
 - [Introduction](chap1_introduction.md)
 - [Near Field Computation](chap2_nearfield.md)
 - [CSR Computation](chap3_CSR.md)
@@ -24,8 +26,12 @@ P. Elleaume (elleaume@esrf.fr)
 - [SASE FEL: Wavefront Amplification](chap9_SASE.md)
 - [Wavefront Propagation](chap10_WP.md)
 
-## **Reference Manual**
+## Reference Manual
 
 - [Reference Manual](chap11_Ref.md)
 - [Frequently Asked Questions](chap12_Ques.md)
 
+# SRW Python Interface
+under development
+:book:
+:black_nib:
