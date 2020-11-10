@@ -27,7 +27,7 @@
     "prism",
     "page-toc-button",
     "back-to-top-button",
-    "mathjax@2.7.6"
+    "mathjax"
   ],
 
   "pluginsConfig": {
