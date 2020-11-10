@@ -15,3 +15,7 @@ run:
 
 build:
 	gitbook build
+
+pdf:
+	gitbook pdf
+

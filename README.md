@@ -56,4 +56,5 @@ gitbook pdf
 
 ## Visit
 
-open http://localhost:4000
+open http://localhost:4000 in browser
+

@@ -3,7 +3,7 @@
   "description": "SRW",
   "author": "Oleg Tchubar",
   "output.name": "site",
-  "language": "zh-hans",
+  "language": "en-US",
   "gitbook": "3.2.3",
   "root": ".",
   "structure": {
@@ -11,7 +11,7 @@
   },
   "links": {
     "sidebar": {
-      "主页": "https://github.com/ahebnl/srw-doc"
+      "Home": "https://github.com/ahebnl/srw-doc"
     }
   },
   "plugins": [
@@ -57,7 +57,7 @@
     },
     "edit-link": {
       "base": "https://github.com/ahebnl/srw-doc",
-      "label": "编辑此页面"
+      "label": "Edit this page"
     },
     "anchor-navigation-ex": {
       "isRewritePageTitle": false,
