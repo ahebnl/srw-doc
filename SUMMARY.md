@@ -28,10 +28,7 @@ P. Elleaume (elleaume@esrf.fr)
 
 ## SRW Python Interface
 
-under development
-
-:book:
-:black_nib:
+- [Introduction](chap_Py1_introduction.md)
 
 ## Test
 
