@@ -27,7 +27,8 @@
     "prism",
     "page-toc-button",
     "back-to-top-button",
-    "mathjax"
+    "katex",
+    "enhanced-katex"
   ],
 
   "pluginsConfig": {
