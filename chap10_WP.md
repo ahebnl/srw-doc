@@ -112,11 +112,11 @@ dimensions. Let's assume that one needs to propagate a wavefront at a wavelength
 computed on a square aperture with transverse dimensions a x a located at a distance R from
 the source. Then, to resolve well the electric field of the wavefront, one needs roughly the
 following amount of memory:
-```csharp
-expression p43_1
-```
-This makes around 30 MB for the wavefront of 10 cm x 10 cm transverse size at 1 micron
-wavelength and 10 m distance from the source. In cases of a strong demagnification or a
+$$C[MB]\approx 3.10^{-5}a^4/(\lambda R)^2$$
+![](image/p43_1.png)
+
+This makes around $30$ MB for the wavefront of $10$ cm $\times$ $10$ cm transverse size at $1$ micron
+wavelength and $10$ m distance from the source. In cases of a strong demagnification or a
 propagation in space over a long distance, more memory is needed.
 
 We are working on, and have partially implemented an improved version of the wavefront
@@ -124,16 +124,16 @@ propagation, which is much less memory demanding compared to what is indicated a
 improved method is applied when the wavefront has more-or-less constant instant radius within
 its transverse dimensions.
 
-We have successfully tried various cases of the SR propagation on a PC with 64 MB of RAM
+We have successfully tried various cases of the SR propagation on a PC with $64$ MB of RAM
 under Windows NT Workstation 4.0, for example:
 
 - Propagation of Infra-Red Edge Radiation from central part or edges of bending magnets,
-computed at 1 m from geometrical source point, through a 2 cm x 2 cm aperture and drift space
-of 10 m length.
-- 10 : 1 imaging of visible range bending magnet SR with a 5 cm diameter lens located at 10 m
+computed at $1$ m from geometrical source point, through a $2$ cm $\times$ $2$ cm aperture and drift space
+of $10$ m length.
+- $10$ : $1$ imaging of visible range bending magnet SR with a $5$ cm diameter lens located at $10$ m
 from the geometrical source point.
-- 10 : 1 imaging of a central cone of undulator radiation at ~10 keV with a focusing element
-located at 30 m from the center of undulator.
+- $10$ : $1$ imaging of a central cone of undulator radiation at $\sim10$ keV with a focusing element
+located at $30$ m from the center of undulator.
 
 ## **Special Notes on Propagation**
 * **Use Automatic Radiation Sampling**
@@ -356,23 +356,28 @@ using CPU-efficient methods of Fourier Optics. In assumption of small angles and
 considerably larger than wavelength, the transverse components of electric field of the diffracted
 Synchrotron Radiation can be computed from the electric field at an aperture causing the
 diffraction by the well-known Huygens-Fresnel principle:
-```csharp
-expression p47_1
-```
 
-where ?? is a surface within the diffracting aperture, S is a distance from a point on this surface
+$$\vec E_{\bot2} = -ik(2\pi)^{-1}\iint\limits_{\Sigma}\vec E_{\bot1}S^{-1}e^{ikS}d\Sigma$$
+![](image/p47_1.png)
+
+where $\Sigma$ is a surface within the diffracting aperture, $S$ is a distance from a point on this surface
 to the observation point. This can be shown by applying the integral theorem of Helmholtz and
 Kirchhoff (see M.Born, E.Wolf, Principles of Optics, 4th ed., Pergamon Press (1970), p. 377) to
 the Synchrotron Radiation represented, for example, as described in the chapter "Near Field
 Computation".
 
-If ?? is a plane normal to optical axis (assume Y axis of a Cartesian frame), then
-```csharp
-expression p47_2
-```
-where (x1,y1,z1) and (x2,y2,z2) are coordinates of a point on the ?? plane and on the
+If $\Sigma$ is a plane normal to optical axis (assume $Y$ axis of a Cartesian frame), then
+
+$$d\Sigma = dx_1dz_1$$
+$$S=[(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2]^{1/2}$$
+
+![](image/p47_2.png)
+
+![](image/p47_3.png)
+
+where $(x_1,y_1,z_1)$ and $(x_2,y_2,z_2)$ are coordinates of a point on the $\Sigma$ plane and on the
 observation plane respectively, and the above Fresnel formula is a convolution type integral,
-which can be quickly computed by applying the convolution theorem and the 2D Fast Fourier
+which can be quickly computed by applying the convolution theorem and the $2D$ Fast Fourier
 Transforms. This gives a CPU-efficient method of propagation of all the wavefront at once (to be
 more precise, the transverse components of the electric field) through a drift space of any
 length.
@@ -384,7 +389,7 @@ of a thin lens this function is well-known. In more complicated cases, one can a
 considerations or analytical methods (for example, the stationary phase method) to derive the
 proper transformation of the electric field.
 
-The main advantage of this method of the wavefront propagation is speed. A 2D wavefront can
+The main advantage of this method of the wavefront propagation is speed. A $2D$ wavefront can
 be propagated for the time from several seconds to one minute, which is normally much faster
 than the time needed for its initial creation (i.e., the Near-Field SR computation). This allows to
 perform computations with several optical components at once, make various optimizations of a
@@ -401,7 +406,7 @@ the Propagation related part of SRW.
 The method of computation of the intensity profile generated by a thick beam is very similar to
 that of the Near Field Computation.The Matrix T now transfers the second-order moments from
 one optical component to another. The single-electron intensity profile after propagation is
-convoluted by a Gaussian with the RMS equal to the propagated second-order moment ??
+convoluted by a Gaussian with the RMS equal to the propagated second-order moment $\langle(x-\langle x\rangle)^1\rangle_p$
 (see the "Theortical Notes" for the "Near Field Computation" above).
 
 This method is typically valid for intensity distributions of the focused SR (provided that the size

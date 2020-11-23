@@ -51,7 +51,8 @@ The following are steps one typically needs to make in order to perform the Near
 computation with SRW. Depending of particular goal, some of the steps may not be necessary,
 others may require several iterations.
 
-1) Initialize SRW.
+1) **Initialize** SRW.
+
 ![](image/p5_1.png)
 
 Normally, the initialization is executed automatically when you start Igor with the SRW installed.
@@ -59,23 +60,24 @@ However, if you may still need to execute it manually when starting a new "exper
 ensure that all SRW global variables are (re-)initialized to their default values. It is not
 recommended to make more than one initialization in the same experiment.
 
-2) Define Electron Beam.
+2) Define **Electron Beam**.
+
 ![](image/p6_1.png)
 
 Here one defines all the parameters of the electron beam. See the Reference Manual records
-for the dialog box "Electron Beam" and the macro commands SrwElecFilament and
-SrwElecThick.
+for the dialog box "Electron Beam" and the macro commands **SrwElecFilament** and
+**SrwElecThick**.
 
-3) Define Radiation Sampling.
+3) Define **Radiation Sampling**.
 
 ![](image/p6_2.png)
 
 Here one defines the longitudinal position of the observation plane, ranges of transverse
 positions and photon energy and number of points where the radiation will be computed. For
-details on the Radiation Sampling definition, see the Reference Manual topic Radiation
-Sampling and the records on the macro commands SrwSmpCreate and SrwSmpScanXZE.
+details on the Radiation Sampling definition, see the Reference Manual topic **Radiation
+Sampling** and the records on the macro commands **SrwSmpCreate** and **SrwSmpScanXZE**.
 
-4) Define Magnetic Field.
+4) Define **Magnetic Field**.
 
 ![](image/p7_1.png)![](image/p7_2.png)
 
@@ -84,7 +86,7 @@ definition, see the Reference Manual records on the macro commands **SrwMagField
 **SrwMagZero**, **SrwMagConst**, **SrwMagSin**, **SrwMagEdge**, **SrwMagGsnAng**,
 **SrwMagImportCmpn**, **SrwMagDisplayField**, **SrwMagElecTraj**, **SrwMagDupl**.
 
-5) Compute the Near-Field SR Electric Field.
+5) **Compute** the Near-Field SR Electric Field.
 
 ![](image/p8_1.png)
 
@@ -92,15 +94,15 @@ This is where the radiation is computed. It is the only place which may take sig
 depending on the number of points defined in the Radiation Sampling structure. For details on
 the Near Field SR computation, see the section "Near-Field SR Computation Method" in the
 "Theoretical Notes", and the Reference Manual records for the dialog box "Compute Electric
-Field" and the macro commands SrwWfrCreate and SrwMagPrec.
+Field" and the macro commands **SrwWfrCreate** and **SrwMagPrec**.
 
-6) Visualize the computed SR component of interest.
+6) Visualize**** the computed SR component of interest.
 
 ![](image/p8_2.png)
 
 This is where one plots the data associated with a particular polarization. For details on options
 of visualization of single-electron or multi-electron SR components see the Reference Manual
-record for the dialog box "Visualize" and the macro command SrwWfr2Int.
+record for the dialog box "Visualize" and the macro command **SrwWfr2Int**.
 
 **IMPORTANT**: It is important to make several cycles of computation with different values of the
 integration precision parameters (dialog "Compute Electric Field"). The independence, at a
@@ -113,6 +115,7 @@ alternatives.
 - The simplest one consists in re-executing the macros by copying them in the History window
 and pasting them into the Command window. After pasting and before executing, you may want
 to edit some parameters.
+
 - You may group all the macro calls into your own macro. You can type your own macro directly
 into the procedure window, yet this is not a recommended method because you must know the
 text equivalent of each command and remember its list of arguments (that you can derive from
@@ -130,7 +133,7 @@ such a way that you can call it directly from the "Macros" menu of Igor without 
 definition in the Command window.
 
 ## **Assumptions**
-I. The following assumptions are made when computing the Near Field SR:
+**I.** The following **assumptions** are made when computing the **Near Field SR**:
    * The electrons are relativistic.
    * Radiation from different electrons is incoherent.
    * Only transverse SR polarization components are considered.
@@ -140,13 +143,15 @@ observation point.
 smaller than 1 radian at any point of the electron trajectory.
    * SR emission is not affected by conductive walls of a vacuum chamber.
    * Diffraction effects on the vacuum chamber are neglected.
-II. The following assumptions are made at the computation of the intensity distributions due to
-Non-zero Emittance Electron Beam:
-    * The particle distribution in the electron beam is Gaussian over transverse positions and angles.
-    * Magnetic field is transversely uniform in the region where the SR is emitted.
-## Problems and Limitations
-The implemented method of the Near Field SR computation has the following problems and
-limitations.
+   
+**II.** The following **assumptions** are made at the computation of the intensity distributions due to
+**Non-zero Emittance Electron Beam**:
+* The particle distribution in the electron beam is Gaussian over transverse positions and angles.
+* Magnetic field is transversely uniform in the region where the SR is emitted.
+
+## **Problems and Limitations**
+The implemented method of the **Near Field SR** computation has the following **problems and
+limitations**.
 
 *Observation distance and wavelength.*   
 This version does not treat separately the Electric and Magnetic fields of the radiation. Only
@@ -167,16 +172,22 @@ into some direction, one must provide the magnetic field defined over a sufficie
 longitudinal range to allow the SR computation for the given direction. If this is not the case,
 SRW may throw an error message asking to increase the range of definition of the magnetic
 field.
+
 ## **Theoretical Notes**
 1. **Near-Field SR Computation Method**  
+
 To compute the Near Field SR in frequency domain, an approach based on retarded potentials
 is applied. Starting from Fourier transformations of the retarded scalar and vector potentials, one
 can easily get the following expression for the electric field of the radiation emitted by a
-relativistic electron (Gaussian System):
+relativistic electron (Gaussian System): 
+
+$$\displaystyle \vec{E}=iek\int\limits_{-\infty}^{+\infty}[\vec{\beta}-\vec{n}[1+i(kR)^{-1}]]R^{-1}e^{ik(c\tau+R)}d\tau$$
+
 ![](image/p11_1.png)
-where k is a wave number, ? instant relative velocity of electron, ? unit vector directed from
-instant electron position to an observation point, R distance from the electron to the observation
-point, c speed of light, e charge of electron. The integration is done over the time in laboratory
+
+where $k$ is a wave number, $\vec{\beta}$ instant relative velocity of electron, $\vec{n}$ unit vector directed from
+instant electron position to an observation point, $R$ distance from the electron to the observation
+point, $c$ speed of light, e charge of electron. The integration is done over the time in laboratory
 frame.
 
 The electric field is computed in the code almost directly from the above formula, after a proper
@@ -186,11 +197,17 @@ losses of precision in the phase (see paper: O.V.Chubar, Rew. Sci. Instrum., Vol
 
 To ensure fast convergence of the above integral, semi-analytical treatment of its outer parts is
 performed according to the following simplest asymptotic expansion:
-```csharp
-expression
-```
+
+$$\displaystyle \int\limits_{-\infty}^{+\infty}Fe^{i\Phi}ds = \int\limits_{s_1}^{s_2}Fe^{i\Phi}ds + \int\limits_{-\infty}^{s_1}Fe^{i\Phi}ds + \int\limits_{s_2}^{+\infty}Fe^{i\Phi}ds$$
+
+![](image/p11_2.png)
+
+$$\displaystyle \int\limits_{-\infty}^{s_1}Fe^{i\Phi}ds + \int\limits_{s_2}^{+\infty}Fe^{i\Phi}ds \approx\left[\left(\frac{F}{i\Phi'} + \frac{F'\Phi'-F\Phi{''}}{\Phi'^3}\right)e^{i\Phi}\right]_{s_2}^{s_1}$$
+
+![](image/p11_3.png)
+
 This allows to compute numerically only the integral between some values of the longitudinal
-position s1 and s2. These values are chosen in such a way that the interval [s1,s2] is as small as
+position $s_1$ and $s_2$. These values are chosen in such a way that the interval $[s_1,s_2]$ is as small as
 possible yet still satisfies the requirement that the second term of the asymptotic expansion is
 essentially smaller than the first one.
 
@@ -201,6 +218,7 @@ velocity fields (J.D. Jackson, Classical Electrodynamics, 2nd. ed., New York: Wi
 calculations, the method based on the retarded potentials has more advantages.
 
 2. **Thick Electron Beam**  
+
 The previous section treats the single-electron emission. This section describes how a non-zero
 emittance of electron beam is taken into account in the Near Field computation.
 
@@ -210,26 +228,50 @@ the single-electron intensity distribution, with a 2D Gaussian. The RMS of this 
 given by the electron beam sizes propagated to the observation plane, using the rules of the
 second-order moments propagation.
 
-Let ? and ? be horizontal emittance and relative energy spread of the electron beam. Then
+Let $\varepsilon_x$ and $\delta E$ be horizontal emittance and relative energy spread of the electron beam. Then
 the second-order central moments of particle distribution in the beam can be readily computed
 at any longitudinal position from the values of lattice functions (alpha, beta, dispersion
 function and its derivative) at that position:
-```csharp
-expression p12_1
-```
-Let T be a 3 x 3 matrix describing the transformation of the (horizontal) second-order moments
+
+$$ 
+  \begin{cases}
+    \langle(x-\langle x\rangle)^2\rangle = \sigma_x^2 = \varepsilon_x\beta_x + \delta E^2\eta_x^2\\
+    \langle(x-\langle x\rangle)(x'-\langle x'\rangle)\rangle = -\varepsilon_x\alpha_x + \delta E^2 \eta_x\eta{'}_x\\
+    \langle(x'-\langle x'\rangle)^2\rangle = \sigma_{x'}^2 = \varepsilon_x(1+\alpha_x^2)/\beta_x + \delta E^2\eta{'}_x^2
+  \end{cases}
+$$
+
+![](image/p12_1.png)
+
+Let $T$ be a $3\times3$ matrix describing the transformation of the (horizontal) second-order moments
 from the source point to the observation plane. The RMS of the Gaussian used in the
-convolution with the single-electron intensity ?? is obtained from the matrix relation:
-```csharp
-expression p12_2
-```
+convolution with the single-electron intensity $\langle(x-\langle x\rangle)^?\rangle_p$ (**this notation is not clear in the original SRW_Help.pdf file.**) is obtained from the matrix relation:
+
+$$
+  \begin{bmatrix}
+  \langle(x-\langle x\rangle)^2\rangle_p\\
+  \langle(x-\langle x\rangle)(x'-\langle x'\rangle)\rangle_p\\
+  \langle(x'-\langle x'\rangle)^2\rangle_p
+  \end{bmatrix}
+  =T
+    \begin{bmatrix}
+  \langle(x-\langle x\rangle)^2\rangle_p\\
+  \langle(x-\langle x\rangle)(x'-\langle x'\rangle)\rangle_p\\
+  \langle(x'-\langle x'\rangle)^2\rangle_p
+  \end{bmatrix}
+$$
+
+![](image/p12_2.png)
+
 The vertical moments are treated similarly, with the only difference that the vertical dispersion is
 neglected.  
 This treatment of non-zero transverse emittance of electron beam is valid within the assumption
 of a transversely uniform magnetic field in the region where the SR is emitted. This assumption
 is met in most of the SR sources. However there are cases, such as SR produced in a
 quadrupole, which cannot be computed in this manner.
-## Examples
+
+## **Examples**
+
 1. **Near-Field Edge Radiation**  
 This example illustrates the simplest near-field SR computation. It gives the Spectral Flux per
 unit surface (intensity) of the Edge Radiation at 0.7 m from downstream bending magnet edge
