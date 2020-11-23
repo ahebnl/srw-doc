@@ -181,13 +181,15 @@ is applied. Starting from Fourier transformations of the retarded scalar and vec
 can easily get the following expression for the electric field of the radiation emitted by a
 relativistic electron (Gaussian System): 
 
-$$\displaystyle \vec{E}=iek\int\limits_{-\infty}^{+\infty}[\vec{\beta}-\vec{n}[1+i(kR)^{-1}]]R^{-1}e^{ik(c\tau+R)}d\tau$$
+$$
+\displaystyle \vec{E}=iek\int\limits_{-\infty}^{+\infty}[\vec{\beta}-\vec{n}[1+i(kR)^{-1}]]R^{-1}e^{ik(c\tau+R)}d\tau
+$$
 
 ![](image/p11_1.png)
 
-where $k$ is a wave number, $\vec{\beta}$ instant relative velocity of electron, $\vec{n}$ unit vector directed from
-instant electron position to an observation point, $R$ distance from the electron to the observation
-point, $c$ speed of light, e charge of electron. The integration is done over the time in laboratory
+where $$k$$ is a wave number, $$\vec{\beta}$$ instant relative velocity of electron, $$\vec{n}$$ unit vector directed from
+instant electron position to an observation point, $$R$$ distance from the electron to the observation
+point, $$c$$ speed of light, e charge of electron. The integration is done over the time in laboratory
 frame.
 
 The electric field is computed in the code almost directly from the above formula, after a proper
@@ -202,12 +204,12 @@ $$\displaystyle \int\limits_{-\infty}^{+\infty}Fe^{i\Phi}ds = \int\limits_{s_1}^
 
 ![](image/p11_2.png)
 
-$$\displaystyle \int\limits_{-\infty}^{s_1}Fe^{i\Phi}ds + \int\limits_{s_2}^{+\infty}Fe^{i\Phi}ds \approx\left[\left(\frac{F}{i\Phi'} + \frac{F'\Phi'-F\Phi{''}}{\Phi'^3}\right)e^{i\Phi}\right]_{s_2}^{s_1}$$
+$$\displaystyle \int\limits_{-\infty}^{s_1}Fe^{i\Phi}ds + \int\limits_{s_2}^{+\infty}Fe^{i\Phi}ds \approx\left[\left(\frac{F}{i\Phi'} + \frac{F'\Phi'-F\Phi{''}}{\Phi^{'3}}\right)e^{i\Phi}\right]_{s_2}^{s_1}$$
 
 ![](image/p11_3.png)
 
 This allows to compute numerically only the integral between some values of the longitudinal
-position $s_1$ and $s_2$. These values are chosen in such a way that the interval $[s_1,s_2]$ is as small as
+position $$s_1$$ and $$s_2$$. These values are chosen in such a way that the interval $$[s_1,s_2]$$ is as small as
 possible yet still satisfies the requirement that the second term of the asymptotic expansion is
 essentially smaller than the first one.
 
@@ -228,7 +230,7 @@ the single-electron intensity distribution, with a 2D Gaussian. The RMS of this 
 given by the electron beam sizes propagated to the observation plane, using the rules of the
 second-order moments propagation.
 
-Let $\varepsilon_x$ and $\delta E$ be horizontal emittance and relative energy spread of the electron beam. Then
+Let $$\varepsilon_x$$ and $$\delta E$$ be horizontal emittance and relative energy spread of the electron beam. Then
 the second-order central moments of particle distribution in the beam can be readily computed
 at any longitudinal position from the values of lattice functions (alpha, beta, dispersion
 function and its derivative) at that position:
@@ -243,9 +245,9 @@ $$
 
 ![](image/p12_1.png)
 
-Let $T$ be a $3\times3$ matrix describing the transformation of the (horizontal) second-order moments
+Let $$T$$ be a $$3\times3$$ matrix describing the transformation of the (horizontal) second-order moments
 from the source point to the observation plane. The RMS of the Gaussian used in the
-convolution with the single-electron intensity $\langle(x-\langle x\rangle)^?\rangle_p$ (**this notation is not clear in the original SRW_Help.pdf file.**) is obtained from the matrix relation:
+convolution with the single-electron intensity $$\langle(x-\langle x\rangle)^?\rangle_p$$ (**this notation is not clear in the original SRW_Help.pdf file.**) is obtained from the matrix relation:
 
 $$
   \begin{bmatrix}
