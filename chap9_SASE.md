@@ -90,8 +90,8 @@ See Reference Manual record on the macro **SrwWfrSASECreate** for details.
 
 - This is an illustration of a steady-state SASE computation and further propagation of the SASE
 wavefront in free space. The parameters generally correspond to the DESY XFEL project:
-electron energy ~ 25 GeV, peak current ~5000 A, undulator period ~ 50 mm, resonant radiation
-wavelength ~ 1 Å. The initial wavefront is assumed to be Gaussian with its waist at the beginning of the undulator. The SASE computation is mainly based on the GENESIS 3D code developed
+electron energy $$\sim$$ 25 GeV, peak current $$\sim$$ 5000 A, undulator period $$\sim$$ 50 mm, resonant radiation
+wavelength $$\sim$$ 1 Å. The initial wavefront is assumed to be Gaussian with its waist at the beginning of the undulator. The SASE computation is mainly based on the GENESIS 3D code developed
 at DESY (this FORTRAN code was converted to C and integrated with other parts of SRW).
 - As the computation progresses, several characteristics of the SASE wavefront, including
 power, RMS size of the power density distribution and bunching factor, are displayed in graphs

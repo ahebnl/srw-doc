@@ -93,7 +93,7 @@ trajectory parts is much larger than Pi.
 * **Planar Wiggler**
 
 This example computes spectral flux per unit surface of synchrotron radiation emitted by a nonzero
-emittance electron beam in a planar wiggler (Bmax = 1.8 T, 3 periods of 150 mm length).
+emittance electron beam in a planar wiggler ($$B_{max} = 1.8$$ T, 3 periods of 150 mm length).
 The effect of the wiggler terminations is taken into account. The electron beam parameters are
 those of ESRF (energy 6 GeV, current 200 mA, horizontal and vertical emittances 3.9 nm and
 0.039 nm, beta functions 35.6 m and 2.5 m).
@@ -101,7 +101,7 @@ those of ESRF (energy 6 GeV, current 200 mA, horizontal and vertical emittances 
 * **Ellipsoidal Wiggler**
 
 This example computes spectral flux per unit surface of synchrotron radiation emitted by a nonzero
-emittance electron beam in an ellipsoidal wiggler (Kz=20, Kx=1.2, 3 periods of 150 mm
+emittance electron beam in an ellipsoidal wiggler ($$K_z=20$$, $$K_x=1.2$$, 3 periods of 150 mm
 length). The effect of the wiggler terminations is NOT taken into account. The electron beam
 parameters are those of ESRF (energy 6 GeV, current 200 mA, horizontal and vertical
 emittances 3.9 nm and 0.039 nm, beta functions 35.6 m and 2.5 m).

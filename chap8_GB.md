@@ -7,6 +7,7 @@ synchrotrons / storage rings, e.g. conventional lasers and FELs.
 ## **Gaussian Beam Computation Step by Step**
 The following are the steps one needs to make in order to perform the computation of spectral
 angular distributions of wiggler radiation.
+
 1) **Initialize** SRW.
 
 ![](image/p20_1.png)

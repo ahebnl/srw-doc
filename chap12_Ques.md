@@ -87,7 +87,9 @@ vertical and horizontal field is interpolated for the same longitudinal coordina
 - If you are an experienced user of Igor, we advise you to print and watch various macros where
 the SRW field data is created and manipulated (file "SRW MagField Gen.ipf" in the SRW
 Procedure folder).
+
 ## **Why electron trajectory appears tilted in an undulator and / or why there is no UR central cone at zero direction ?**
+
 SRW computes the electron trajectory from the following input data.
 
 Electron Beam structure:

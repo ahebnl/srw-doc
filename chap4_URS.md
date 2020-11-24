@@ -99,8 +99,8 @@ angular size of central cone of the undulator radiation.
 The implemented computation method of **UR Spectra through a Slit** has the following
 **problems and limitations**.
 Number of Periods.
-The computation method implemented is valid at 1 << Nper <= Infinity, where Nper is the
-number of periods. The smaller is Nper, the less precise is the computation.
+The computation method implemented is valid at $$1 \ll N_{per} \le +\infty$$, where Nper is the
+number of periods. The smaller is $$N_{per}$$, the less precise is the computation.
 Observation Angles and Distance from Undulator.
 Basically, the implemented method is the Far-Field SR computation method. Therefore it can
 not give a high precision at small distances or large observation angles, especially at small
@@ -116,7 +116,7 @@ from the undulator.
 
 For a photon energy range around the resonant energy value of a given harmonic for a given
 observation direction, the radiation from a finite-length undulator and a "thick" e-beam can be represented with a reasonable precision as a convolution of a spectrum resulting from an
-infinitely long undulator with a resonant (sin(x))^2/x^2 function describing the shape of harmonic
+infinitely long undulator with a resonant $$(\sin x)^2/x^2$$ function describing the shape of harmonic
 for the case of finite-length undulator and zero-emittance electron beam.
 
 So the computation is done in two steps in SRW. First, the spectrum for the infinite-length
@@ -162,8 +162,7 @@ than on-axis resonant value of an odd harmonic.
 This example computes Spectral Flux through a slit vs photon energy for the finite-emittance
 electron beam of ESRF (energy 6 GeV, current 200 mA, horizontal and vertical emittances 3.9
 nm and 0.039 nm, beta functions 35.6 m and 2.5 m, rms energy spread 0.1%), injected through
-an Ellipsoidal Undulator (total length 3.2 m, period 42 mm, deflection parameters: Kz = 2, Kx =
-1). The 0.5 mm x 0.5 mm rectangular slit is located at 30 m distance from the undulator, with its
+an Ellipsoidal Undulator (total length 3.2 m, period 42 mm, deflection parameters: $$K_z=2$$, $$K_x=1$$). The 0.5 mm x 0.5 mm rectangular slit is located at 30 m distance from the undulator, with its
 center on the undulator axis. The radiation is generally circularly polarized. Note the presence of
 circularly polarized on-axis emission at higher harmonics. The image plot of the Power Density
 distribution illustrates small heat load in the on-axis direction.

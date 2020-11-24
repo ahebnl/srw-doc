@@ -200,11 +200,15 @@ losses of precision in the phase (see paper: O.V.Chubar, Rew. Sci. Instrum., Vol
 To ensure fast convergence of the above integral, semi-analytical treatment of its outer parts is
 performed according to the following simplest asymptotic expansion:
 
-$$\displaystyle \int\limits_{-\infty}^{+\infty}Fe^{i\Phi}ds = \int\limits_{s_1}^{s_2}Fe^{i\Phi}ds + \int\limits_{-\infty}^{s_1}Fe^{i\Phi}ds + \int\limits_{s_2}^{+\infty}Fe^{i\Phi}ds$$
+$$
+\displaystyle \int\limits_{-\infty}^{+\infty}Fe^{i\Phi}ds = \int\limits_{s_1}^{s_2}Fe^{i\Phi}ds + \int\limits_{-\infty}^{s_1}Fe^{i\Phi}ds + \int\limits_{s_2}^{+\infty}Fe^{i\Phi}ds
+$$
 
 ![](image/p11_2.png)
 
-$$\displaystyle \int\limits_{-\infty}^{s_1}Fe^{i\Phi}ds + \int\limits_{s_2}^{+\infty}Fe^{i\Phi}ds \approx\left[\left(\frac{F}{i\Phi'} + \frac{F'\Phi'-F\Phi{''}}{\Phi^{'3}}\right)e^{i\Phi}\right]_{s_2}^{s_1}$$
+$$
+\displaystyle \int\limits_{-\infty}^{s_1}Fe^{i\Phi}ds + \int\limits_{s_2}^{+\infty}Fe^{i\Phi}ds \approx\left[\left(\frac{F}{i\Phi'} + \frac{F'\Phi'-F\Phi{''}}{\Phi^{'3}}\right)e^{i\Phi}\right]_{s_2}^{s_1}
+$$
 
 ![](image/p11_3.png)
 

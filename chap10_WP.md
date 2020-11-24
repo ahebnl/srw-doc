@@ -128,12 +128,12 @@ We have successfully tried various cases of the SR propagation on a PC with $$64
 under Windows NT Workstation 4.0, for example:
 
 - Propagation of Infra-Red Edge Radiation from central part or edges of bending magnets,
-computed at $$1$$ m from geometrical source point, through a $$2$$ cm $$\times$$ $$2$$ cm aperture and drift space
-of $$10$$ m length.
-- $$10$$ : $$1$$ imaging of visible range bending magnet SR with a $$5$$ cm diameter lens located at $$10$$ m
+computed at 1 m from geometrical source point, through a 2 cm $$\times$$ 2 cm aperture and drift space
+of 10 m length.
+- 10 : 1 imaging of visible range bending magnet SR with a 5 cm diameter lens located at 10 m
 from the geometrical source point.
-- $$10$$ : $$1$$ imaging of a central cone of undulator radiation at $$\sim10$$ keV with a focusing element
-located at $$30$$ m from the center of undulator.
+- 10 : 1 imaging of a central cone of undulator radiation at $$\sim$$10 keV with a focusing element
+located at 30 m from the center of undulator.
 
 ## **Special Notes on Propagation**
 * **Use Automatic Radiation Sampling**
@@ -144,7 +144,7 @@ Radiation Sampling" (dialog box "Compute SR Electric Field" or macro **SrwWfrCre
 numbers specified in the Radiation Sampling structure are ignored. Instead, the code uses such
 point numbers that correspond to the minimum required for further propagation of the wavefront
 with the given ranges of horizontal and vertical position. An Oversampling Factor, which can be
-<1 or >1, allows to manually steer the point numbers with respect to the above criterion. In all
+$$<1$$ or $$>1$$, allows to manually steer the point numbers with respect to the above criterion. In all
 cases, only the numbers of points are changed, whereas the ranges of transverse positions
 remain unchanged.
 
@@ -357,7 +357,9 @@ considerably larger than wavelength, the transverse components of electric field
 Synchrotron Radiation can be computed from the electric field at an aperture causing the
 diffraction by the well-known Huygens-Fresnel principle:
 
-$$\vec E_{\bot2} = -ik(2\pi)^{-1}\iint\limits_{\Sigma}\vec E_{\bot1}S^{-1}e^{ikS}d\Sigma$$
+$$
+\vec E_{\bot2} = -ik(2\pi)^{-1}\iint\limits_{\Sigma}\vec E_{\bot1}S^{-1}e^{ikS}d\Sigma
+$$
 ![](image/p47_1.png)
 
 where $$\Sigma$$ is a surface within the diffracting aperture, $$S$$ is a distance from a point on this surface
@@ -368,8 +370,13 @@ Computation".
 
 If $$\Sigma$$ is a plane normal to optical axis (assume $$Y$$ axis of a Cartesian frame), then
 
-$$d\Sigma = dx_1dz_1$$
-$$S=[(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2]^{1/2}$$
+$$
+d\Sigma = dx_1dz_1
+$$
+
+$$
+S=[(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2]^{1/2}
+$$
 
 ![](image/p47_2.png)
 

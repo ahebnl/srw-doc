@@ -1106,16 +1106,16 @@ propagation (if automatic radiation sampling was chosen to be used).
 dedicated only to facilitate the dialog-driven style of computation in SRW.
 2. There are three Methods of Longitudinal Integration available for Synchrotron Radiation
 computation:
-- "Manual" is a simplest one-pass longitudinal integration with fixed step size. In this method, the
+   - "Manual" is a simplest one-pass longitudinal integration with fixed step size. In this method, the
 computation is based on the Longitudinal Step value (variable step, input box "Long. Step [m]").
 This method is very sensitive to the Longitudinal Integration Limits (especially in the cases when
 magnetic field is not zero at the edges of the integration interval).
-- "Auto Undulator" is a simple "automatic" integration, mostly suitable for Undulator-type cases
+   - "Auto Undulator" is a simple "automatic" integration, mostly suitable for Undulator-type cases
 (when the required sampling density is more or less uniform along the electron trajectory).
 In this method, the computation is based on Relative Precision value (variable prec, input box
 "Rel. Prec."). This method is very sensitive to the Longitudinal Integration Limits (especially in the
 cases when magnetic field is not zero at the edges of the integration interval).
-- "Auto Wiggler" is a more sophisticated method. In was developed to optimize the SR
+   - "Auto Wiggler" is a more sophisticated method. In was developed to optimize the SR
 computation in Wiggler-type cases (when the required density of sampling is strongly different
 for different parts of the trajectory). It is efficient also for the Edge Radiation, for complicated
 field configurations with drift spaces, etc. In this method, the computation is based on Relative
@@ -1148,12 +1148,12 @@ structure describing properly computed electron trajectory should be supplied by
     *Format of the Trajectory structure.*
     
     The Trajectory structure is a TEXT wave with the following records in its fields:
-  - #0 - name of a scaled 1D numerical wave defining the Horizontal Position [m] vs Longitudinal
+    - name of a scaled 1D numerical wave defining the Horizontal Position [m] vs Longitudinal
 Position [m];
-  - #1 - name of a scaled 1D numerical wave defining the Vertical Position [m] vs Longitudinal
+    - name of a scaled 1D numerical wave defining the Vertical Position [m] vs Longitudinal
 Position [m];
-  - #2 - ascii string representing a decimal number of the Electron Energy;
-  - #3 - ascii string representing a decimal number of the Electron Current.
+    - ascii string representing a decimal number of the Electron Energy;
+    - ascii string representing a decimal number of the Electron Current.
 6. This macro performs computation of the SR electric field, but it does not visualize the
 computation results. To visualize the results, i.e., to extract and plot the SR component of
 desired polarization, one needs to invoke the Visualize dialog box (menu "Visualize...") and
@@ -1167,10 +1167,10 @@ longitudinal position to which they relate.
 trajectory together with the longitudinal position to which they relate agree with the
 magnetic field definition and the radiation sampling range.**
 
-    For example, in order to get the maximum of the central cone of Undulator Radiation at zero
+    *For example, in order to get the maximum of the central cone of Undulator Radiation at zero
 transverse position, one needs to set to zero the initial transverse coordinates and angles of the
 electron trajectory at the longitudinal position before the undulator, where the magnetic field is
-zero or almost zero (but not out of the magnetic field definition range !).
+zero or almost zero (but not out of the magnetic field definition range !).*
 9. The SR Intensity distributions that correspond to a "thick" (finite-emittance) electron beam can
 be obtained at the stage of visualization of the SR computation results using the Visualize dialog
 box (menu "Visualize..."). A convolution method is applied for this. See the reference record for
@@ -1189,11 +1189,11 @@ note, that the Wavefront structure is a 1D TEXT wave that keeps in its first two
 of two complex 3D waves describing the horizontal and vertical components of the SR electric
 field in frequency domain. Each of these complex 3D waves contains a cube of the complex
 electric field data in which:
-   - ROWS correspond to the scan vs Photon Energy;
-   - COLUMNS correspond to the scan vs Horizontal Position;
-   - LAYERS correspond to the scan vs Vertical Position.
-The units of the computed electric field are (Photons/s/0.1%bw/mm^2)^(1/2) (to facilitate
-extraction of the spectral flux per unit surface in Photons/s/0.1%bw/mm^2).
+    - ROWS correspond to the scan vs Photon Energy;
+    - COLUMNS correspond to the scan vs Horizontal Position;
+    - LAYERS correspond to the scan vs Vertical Position.
+The units of the computed electric field are (Photons/s/0.1%bw/mm$$^2$$)$$^{1/2}$$ (to facilitate
+extraction of the spectral flux per unit surface in Photons/s/0.1%bw/mm$$^2$$).
 12. Other fields of the Wavefront structure (1D TEXT wave) contain more information necessary
 for manipulations with the wavefront, among which there are names of two numeric waves of
 Statistical Moments of the computed horizontal and vertical polarization components of the
@@ -1917,7 +1917,7 @@ sampling parameters defined by the structure "smpname". The following additional
 should be specified: first and last harmonic numbers of the UR spectrum to be taken into
 account at the computation (hst and hfin respectively), precision parameters for longitudinal and
 azimuthal integration (ps and pphi respectively), and physical units for the Stokes parameters to
-be computed (flxun=1 for Photons/s/.1%bw per pixel, 2 for Photons/s/.1%bw/mm^2).
+be computed (flxun=1 for Photons/s/.1%bw per pixel, 2 for Photons/s/.1%bw/mm$$^2$$).
 
 ***Details:***
 
@@ -1934,7 +1934,7 @@ are, respectively, the horizontal range and center specified in the Radiation Sa
 The relations for the vertical direction are identical.
 Thus, at sufficiently small pixel sizes, the computed entity tends to the intensity distribution (i.e.,
 flux per unit surface). The computation results may be expressed in units of Photons/s/.1%bw
-per pixel or Photons/s/.1%bw/mm^2.
+per pixel or Photons/s/.1%bw/mm$$^2$$.
 2. The computation precision can be tuned by two parameters (ps and pphi), one of them responsible for longitudinal, the other one for azimuthal integration. By changing the
 parameters, one proportionally changes the numbers of points at the corresponding integration.
 The values of the precision parameters are set by default to 1. This corresponds to a reasonable
@@ -2044,7 +2044,7 @@ Power Density structure with the name "powname".
 energy parameters specified in the Radiation Sampling structure are ignored at this
 computation). The main use of this macro is to estimate heat load on optical components in a
 beamline.
-2. The units of the computed **Power Density** are **W/mm^2**.
+2. The units of the computed **Power Density** are **W/mm$$^2$$**.
 3. The computation precision can be tuned the precision parameter (prec). The value of the
 precision parameter is set by default to 1. This corresponds to a reasonable precision for many
 cases of computation with different magnetic field configurations. However, there is no guaranty
@@ -2319,7 +2319,7 @@ the propagation. The resizing before the propagation may result in increase of t
 (transverse ranges) of the propagated wavefront. If the switch "Auto-Resize After Propagation"
 (variable "resafter") is equal to 1 ("Yes"), the wavefront limits will be automatically reduced after
 the propagation, by cutting the parts of the wavefront where intensity is less than given threshold.
-The default threshold value is on the order of 1e-03 with respect to the peak intensity in the
+The default threshold value is on the order of $$1e^{-03}$$ with respect to the peak intensity in the
 wavefront; this value can be further reduced by choosing the "Precision Parameter" (variable
 "prec") larger than 1.
 
@@ -2508,12 +2508,13 @@ computed radiation (for example, power density does not allow to specify any par
 polarization, etc.).
 3. Possible polarizations are: Linear Horizontal, Linear Vertical, Linear 45 degree, Linear 135
 degree, Circular Right and Circular Left.
-4. The units of the extracted Spectral Flux per Unit Surface are Photons/s/(0.1%bw)/mm^2.
+4. The units of the extracted Spectral Flux per Unit Surface are Photons/s/(0.1%bw)/mm$$^2$$.
 5. Note on extraction of Single-electron and Multi-electron SR components.
 Some of the SR computation methods implemented in SRW produce electric field or stokes
 components of radiation emitted by single electron ("filament" electron beam), other methods
 produce the stokes components calculated originally for finite-emittance ("thick") electron beam.
-In the former case (i.e., when the computed radiation structure contains the single-electron SR
+
+    In the former case (i.e., when the computed radiation structure contains the single-electron SR
 data) the dialog box may suggest to extract both the single-electron ("filament" electron beam)
 or multi-electron ("thick" electron beam) component of the radiation. If the multi-electron
 component is chosen to be extracted, the code performs a convolution over horizontal and
@@ -2523,18 +2524,18 @@ moments propagation, to the same observation plane as the single-electron SR. Th
 parameters of the "thick" electron beam are defined by the Electron Beam dialog box (menu
 "...Electron Beam...") or by the macro **SrwElecThick**.
 
-    This method of calculation of multi-electron intensity is valid only at a number of constraints,
+      This method of calculation of multi-electron intensity is valid only at a number of constraints,
 including:
    - transversely uniform magnetic field;
    - linearity of the optical components the wavefront was propagated through;
    - small contribution of diffraction on apertures.
    
-    It works well for several important cases like:
+It works well for several important cases like:
    - intensity distributions of SR emitted in transversely-uniform magnetic field computed at some
 longitudinal position with no propagation;
    - intensity distributions in the image plane of focused SR.
    
-    However, we would like to point out that **no special checking is done in the code to ensure
+However, we would like to point out that **no special checking is done in the code to ensure
 that this method of computation of multi-electron SR components is valid in each
 particular case of SR emission or propagation.** Such a checking should be done by the user.
 For this, one may perform a number of propagation tests with offsets of the filament electron
@@ -2586,7 +2587,7 @@ the extracted data wave should be immediately plotted in a graph or not (disp).
 
 1. Possible Polarizations are: Linear Horizontal, Linear Vertical, Linear 45 degree, Linear 135
 degree, Circular Right and Circular Left.
-2. The units of the extracted **Intensity** are **Photons/s/mm^2/(0.1%bw)**.
+2. The units of the extracted **Intensity** are **Photons/s/mm$$^2$$/(0.1%bw)**.
 3. The user can choose to extract **Single-electron** (Filament Electron Beam) or **Multi-electron**
 ("thick" electron beam) Intensity. If the Multi-electron Intensity is chosen, the code performs a
 convolution over Horizontal and Vertical coordinates of the Single-electron Intensity with a 2D
@@ -2637,7 +2638,7 @@ data wave should be immediately plotted in a Graph or not (dist).
 
 1. Possible Polarizations are: Linear Horizontal, Linear Vertical, Linear 45 degree, Linear 135
 degree, Circular Right and Circular Left.
-2. The units of the extracted Intensity are Photons/s/mm^2/(0.1%bw).
+2. The units of the extracted Intensity are Photons/s/mm$$^2$$/(0.1%bw).
 3. The user can choose to extract Single-electron (Filament Electron Beam) or Multi-electron
 ("thick" electron beam) Intensity. If the Multi-electron Intensity is chosen, the code performs a
 convolution over Horizontal and Vertical coordinates of the Single-electron Intensity with a 2D
@@ -2646,13 +2647,15 @@ the rules of the second-order moments propagation, to the same observation plane
 Single-electron SR. The initial parameters of the "thick" electron beam are defined by the macro **SrwElecThick**.
 4. The implemented computation method of Multi-electron Intensity is valid only at a number of
 constraints, including:
-- transversely uniform magnetic field;
-- linearity of the optical components the wavefront was propagated through;
-- small contribution of the diffraction on apertures.
-It works for several important cases like:
-- SR intensity distributions computed directly, with no propagation;
-- intensity distributions in image planes of the focused SR.
-However, we would like to point out that **no special checking is done in the code to ensure
+   - transversely uniform magnetic field;
+   - linearity of the optical components the wavefront was propagated through;
+   - small contribution of the diffraction on apertures.
+
+   It works for several important cases like:
+   - SR intensity distributions computed directly, with no propagation;
+   - intensity distributions in image planes of the focused SR.
+
+   However, we would like to point out that **no special checking is done in the code to ensure
 that this method of computation of multi-electron SR components is valid in each
 particular case of SR emission or propagation**. Such a checking should be done by the user.
 For this, one may perform a number of propagation tests with offsets of the filament electron
@@ -2697,7 +2700,7 @@ extracted data wave should be immediately plotted in a graph or not (disp).
 
 1. Possible Polarizations are: Linear Horizontal, Linear Vertical, Linear 45 degree, Linear 135
 degree, Circular Right and Circular Left.
-2. The units of the extracted Spectral Flux per Unit Surface are Photons/s/mm^2/(0.1%bw).
+2. The units of the extracted Spectral Flux per Unit Surface are Photons/s/mm$$^2$$/(0.1%bw).
 3. If "New Display" is chosen to be "Yes", the extracted intensity wave will be plotted in a graph,
 otherwise it will be only created, without plotting.
 4. The full name of the extracted Intensity wave is generated according to the following rule:
@@ -2774,7 +2777,7 @@ wave should be immediately plotted in a graph or not (disp).
 
 ***Details:***
 
-1. The units of the extracted **Power Density are W/mm^2**.
+1. The units of the extracted **Power Density are W/mm$$^2$$**.
 2. If "New Display" is chosen to be "Yes", the extracted intensity wave will be plotted in a graph,
 otherwise it will be only created, without plotting.
 3. The full name of the extracted Intensity wave is generated according to the following rule:

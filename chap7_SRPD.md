@@ -96,7 +96,7 @@ This example computes the SR power per unit surface produced by finite-emittance
 beam of ESRF (energy 6 GeV, current 200 mA, horizontal and vertical emittances 3.9 nm and
 0.039 nm, beta functions 35.6 m and 2.5 m), injected through a planar undulator (total length
 3.2 m, period 35 mm, deflection parameter 2.2). The observation plane is located at 30 m
-distance from the undulator. The units of the computed power density are W/mm^2.
+distance from the undulator. The units of the computed power density are W/mm$$^2$$.
 
 * **ER Power Density**
 
